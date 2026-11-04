@@ -18,6 +18,12 @@ inside that workspace, not in a standalone clone of this repo. Read that file, p
   is **two** levels up, and commands run from there need the
   `HW6_Campus_Customs_Vendor_Desk_CL/hw6/...` prefix. Moved there from `hw6/` on 2026-11-04
   for Problem 10.
+- **The repo is live and public** at
+  <https://github.com/celittle92/HW6_Campus_Customs_Vendor_Desk_CL>, pushed 2026-11-04;
+  `output/github_url.txt` holds the URL. Anything committed here is published as soon as
+  it is pushed — **ask before every push**. The parent folder is its own git repo,
+  gitignored in the private workspace (the HW4/HW5 pattern). Git writes and `gh` need the
+  Terminal panel; `gh` is at `../../.tools/gh/bin/gh`.
 - **HW6 is self-contained.** Christine's instruction, 2026-11-03: the only data this
   homework uses is `hw6/data/`. Nothing comes from HW3, HW4, or HW5 — HW4 and HW5 are also
   Campus Customs and HW5 even has its own `campus_customs.db`, but the shop name is all

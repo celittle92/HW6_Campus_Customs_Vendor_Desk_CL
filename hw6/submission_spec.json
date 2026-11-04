@@ -21,6 +21,7 @@
     "output/exam_run_meta.json",
     "build_report.py",
     "output/hw6_report.html",
+    "output/github_url.txt",
     "cache_test.py",
     "attack_test.py",
     "prompts/prompt_problem3.md",

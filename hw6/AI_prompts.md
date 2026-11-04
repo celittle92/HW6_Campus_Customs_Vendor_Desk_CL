@@ -460,6 +460,44 @@ data pack (no written assignment brief exists; Christine types each problem in c
 
 ---
 
+## Problem 10: Push to GitHub and submit the URL
+
+### Prompt
+
+> Problem 10: Push to GitHub and submit the URL
+>
+> Push the project to a public GitHub repo, and I will then submit it on canvas once it is ready. Make sure it opens and the files outlined below are there.
+>
+> Include the whole data/ folder (the course data plus two attack files) so graders can clone the repo and run the agent. DO NOT commit the real .env file - and use .gitignore to keep it out and include .env.example with placeholders only. Other Python files are fine. Put a short note in README.md on how to run the agent. I've attached a screenshot of the expected file architecture in the repo
+
+*(A screenshot of the expected repo tree was attached: `hw6/` at the top, holding
+`AI_prompts.md`, `README.md`, `.gitignore`, `.env.example`, `requirements.txt`, `agent.py`,
+`tools.py`, `models.py`, `prompts/`, `data/` and `output/`.)*
+
+### Follow-up prompts
+
+*None — I asked two setup questions before creating anything public (repo layout and name)
+and Christine chose "repo contains hw6/" and `HW6_Campus_Customs_Vendor_Desk_CL`.*
+
+### What was produced
+
+- **<https://github.com/celittle92/HW6_Campus_Customs_Vendor_Desk_CL>** — public, default
+  branch `main`, recorded in [`output/github_url.txt`](output/github_url.txt).
+- The project moved from `hw6/` to `HW6_Campus_Customs_Vendor_Desk_CL/hw6/` so the repo
+  root holds a single `hw6/`, matching the screenshot and the HW4/HW5 layout. Every path
+  that assumed the old location was repointed: the workspace project map and check command,
+  the rules file, `launch.json`, and this folder's `CLAUDE.md` import.
+- [`README.md`](README.md) rewritten for someone cloning it cold: setup, the `.env` step,
+  how to run the agent on one document, the batch runners, and which checks cost nothing.
+- `.gitignore` written for the repo: `.env`, `.venv/`, `__pycache__/`, `*.zip`,
+  `.tiktoken_cache/`, `.claude/`, `.DS_Store`. `.env.example` has placeholders only.
+- **Verified on the remote, not locally**: 75 files, repo public, root is `hw6/`,
+  `data/` complete (12 practice + 10 exam + 3 red-team files + handbook, prices, key), and
+  a recursive scan of the pushed tree found no `.env`, `.pem`, `.key`, venv, `__pycache__`,
+  zip or cache file.
+
+---
+
 ## Template for the problems that follow
 
 ```markdown

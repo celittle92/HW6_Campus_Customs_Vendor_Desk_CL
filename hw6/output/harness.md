@@ -1223,3 +1223,66 @@ the whole point.
 
 Cost of Problem 9: **$0.00** — the page is built from data already on disk.
 Running total for HW6: **$0.1176**.
+
+---
+
+## 10. Problem 10 — Published
+
+**<https://github.com/celittle92/HW6_Campus_Customs_Vendor_Desk_CL>** — public, branch
+`main`. The URL is in [`github_url.txt`](github_url.txt).
+
+### 10.1 Two questions asked before anything became public
+
+The screenshot showed `hw6/` as the top node, which can mean either "the repo contains a
+folder called hw6" or "the repo is hw6". HW4 and HW5 both use the first, and their rules
+record that the assignment specified it — but a public repo is awkward to restructure after
+it has been submitted, so it was worth one question rather than one guess. Christine chose
+the nested layout and the name `HW6_Campus_Customs_Vendor_Desk_CL`.
+
+### 10.2 The move, and everything it broke
+
+`hw6/` moved to `HW6_Campus_Customs_Vendor_Desk_CL/hw6/`. The rename needed the Terminal
+panel — sandboxed Bash refuses a cross-directory rename at the workspace root. The venv
+survived (its `python` is a symlink and its paths are derived from the executable, not
+recorded), confirmed by importing the project's dependencies after the move.
+
+Repointed afterwards: the workspace `CLAUDE.md` project map and pre-submission command, the
+`paths:` frontmatter and prose in `.claude/rules/hw6-vendor-desk.md`, both `hw6-*` entries in
+`.claude/launch.json` (and a wrong interpreter path in `hw6-docs` that had been pointing
+outside the project), and this folder's `CLAUDE.md` — whose rules import is now two levels up
+and will not resolve in a standalone clone, which it now says.
+
+Both checks were re-run at the new location before committing: `check_submission.py` 0 fail /
+0 warn, and 92 offline tests passing.
+
+### 10.3 Keeping the key out
+
+- `.gitignore` for the repo: `.env`, `.env.*` (with `!.env.example`), `*.pem`, `*.key`,
+  `.venv/`, `__pycache__/`, `.tiktoken_cache/`, `.claude/`, `*.zip`, `.DS_Store`.
+- There is **no `.env` inside `hw6/` at all** — the key lives in the workspace root, one
+  level above the repo, so there was never a copy to leak.
+- `.env.example` carries variable names only, rewritten for someone cloning cold (`cp
+  .env.example .env`) rather than describing the private workspace's shared key.
+
+Audited in three places rather than trusting one: the staged file list before the first
+commit, a grep over it for anything secret-shaped, and — after pushing — a recursive scan of
+the **tree GitHub actually has**. All three clean.
+
+### 10.4 What is on the remote
+
+75 files. Root holds exactly one thing, `hw6/`. `data/` is complete: 12 practice documents,
+10 exam documents, 3 red-team files, plus the handbook, prices and practice key — so a
+grader can clone and run without hunting for a data pack.
+
+`README.md` was rewritten for that reader: setup, the `.env` step, running the agent on one
+document, the batch runners, which checks cost nothing, how the three defence layers fit
+together, and what the trap tools are for.
+
+### 10.5 One judgement call worth flagging
+
+`hw6/CLAUDE.md` is committed. It is project documentation and HW5 set the precedent, but it
+contains absolute paths under `/Users/christinelittle/...` and instructions written for an
+agent rather than a reader. Nothing sensitive, but it is the one file in the repo that was
+not written for the public. Easy to remove if Christine would rather it were not there.
+
+Cost of Problem 10: **$0.00**. Final total for HW6: **$0.1176**.
