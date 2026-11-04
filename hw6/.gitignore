@@ -12,8 +12,11 @@ __pycache__/
 *.pyc
 .tiktoken_cache/
 
-# Agent-tooling config, not part of the project
+# Agent-tooling config and notes, not part of the project.
+# CLAUDE.md is kept locally as workspace memory but not published: it holds
+# absolute local paths and is written for an agent, not for a reader.
 .claude/
+CLAUDE.md
 
 # Supplied data pack archive (the unpacked data/ folder is committed instead)
 *.zip
