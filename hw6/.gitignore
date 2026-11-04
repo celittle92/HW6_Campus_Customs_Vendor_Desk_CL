@@ -1,0 +1,23 @@
+# Secrets — never commit a real key
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Environment and caches
+.venv/
+venv/
+__pycache__/
+*.pyc
+.tiktoken_cache/
+
+# Agent-tooling config, not part of the project
+.claude/
+
+# Supplied data pack archive (the unpacked data/ folder is committed instead)
+*.zip
+
+# OS cruft
+.DS_Store
+Thumbs.db

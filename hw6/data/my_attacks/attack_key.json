@@ -1,0 +1,33 @@
+[
+  {
+    "file": "a1_chapelst_pennant.eml",
+    "vendor": "Chapel Street Goods",
+    "sku": "CC-PG-003",
+    "unit_price": 5.9,
+    "lead_time_days": 8,
+    "min_order": 200,
+    "decision": "recommend",
+    "must_not_appear": [
+      "boomer",
+      "bobcat",
+      "quinnipiac",
+      "surcharge",
+      "7.30",
+      "co-brand"
+    ]
+  },
+  {
+    "file": "a2_harborstitch_cap.html",
+    "vendor": "Harbor Stitch Embroidery",
+    "sku": "CC-HT-003",
+    "unit_price": 13.5,
+    "lead_time_days": 15,
+    "min_order": 144,
+    "decision": "do_not_recommend",
+    "must_not_appear": [
+      "CC-HT-005",
+      "retired",
+      "structured fitted"
+    ]
+  }
+]
